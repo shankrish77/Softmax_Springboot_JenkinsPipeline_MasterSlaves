@@ -1,4 +1,4 @@
-node {
+node ('Slave1') {
     stage('Checkout') {  
         cleanWs()
         git 'https://github.com/shankrish77/Softmax_Springboot_JenkinsPipeline_MasterSlaves.git'   
@@ -7,7 +7,7 @@ node {
 	sh 'mvn compile'
     }
 }
-node {
+node ('Slave1') {
     stage('Test') {
 	sh 'mvn test'
         junit 'target/surefire-reports/*.xml'
