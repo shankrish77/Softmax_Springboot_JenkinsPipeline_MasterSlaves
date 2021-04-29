@@ -7,7 +7,7 @@ node ('Slave1') {
 	sh 'mvn compile'
     }
 }
-node ('Slave1') {
+node ('Slave2') {
     stage('Test') {
 	sh 'mvn test'
         junit 'target/surefire-reports/*.xml'
